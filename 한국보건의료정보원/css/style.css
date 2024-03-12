@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+header{
+  border-bottom: 1px solid #eee;
+  justify-content: center;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -1px;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+li{
+  list-style: none;
+}
+.headerWrap{
+  width: 1280px;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  height: 96px;
+}
+.logo{
+  width: 231px;
+  height: 36px;
+  background: url(../images/logo_ov.png) no-repeat center center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gnb{
+  float: right;
+  margin-right: 175px;
+}
+.headMenu{
+  margin: 0;
+  text-align: center;
+}
+.headMenu li{
+  margin-left: 45px;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: top;
+}
+.headMenu li a{
+  display: block;
+  height: 96px;
+  line-height: 96px;
+  padding: 0 12px;
+}
