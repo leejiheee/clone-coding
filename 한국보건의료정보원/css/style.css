@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-header{
-  border-bottom: 1px solid #eee;
-  justify-content: center;
-  box-sizing: border-box;
-}
 body{
   font-family: "Noto Sans KR", sans-serif;
   margin: 0;
@@ -18,38 +13,323 @@ a{
 li{
   list-style: none;
 }
-.headerWrap{
-  width: 1280px;
-  display: flex;
-  position: relative;
-  margin: 0 auto;
-  height: 96px;
+button{
+  font-family: "Noto Sans KR", sans-serif;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
 }
-.logo{
+/* 헤더 */
+.header_wrap{
+  width: 100%;
+  height: 96px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  background-color: #fff;
+}
+.header_inner{
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+}
+.header_logo{
+  background: url(/한국보건의료정보원/images/logo_ov.png);
   width: 231px;
   height: 36px;
-  background: url(../images/logo_ov.png) no-repeat center center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
-.gnb{
-  float: right;
-  margin-right: 175px;
-}
-.headMenu{
+.header_menu > ul[class="menu_list"]{
+  width: 830px;
+  display: flex;
   margin: 0;
-  text-align: center;
+  padding: 0 0 0 70px;
+  height: 96px;
+  align-items: center;
 }
-.headMenu li{
-  margin-left: 45px;
-  font-size: 18px;
-  display: inline-block;
-  vertical-align: top;
-}
-.headMenu li a{
-  display: block;
+.header_menu .menu{
+  margin-left: 46px;
+  padding: 0 12px;
   height: 96px;
   line-height: 96px;
-  padding: 0 12px;
+  cursor: pointer;
+}
+.header_menu .menu a span{
+  font-size: 18px;
+  font-weight: 300;
+}
+.header_right{
+  display: flex;
+  margin-left: 20px;
+}
+.header_right a{
+  font-size: 12px;
+  margin-left: 18px;
+}
+.header_right a .fa-globe{
+  margin-right: 6px;
+}
+.all_menu{
+  width: 23px;
+  height: 14px;
+  position: relative;
+  margin-left: 30px;
+}
+.all_menu span{
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  transition: 0.3s;
+}
+.all_menu span:nth-child(1){
+  top: 0;
+}
+.all_menu span:nth-child(2){
+  top: 50%;
+}
+.all_menu span:nth-child(3){
+  top: 100%;
+}
+.all_menu:hover.all_menu span{
+  top: 50%;
+}
+.header_menu ul .sub_menu{
+  width: 100%;
+  height: 345px;
+  background-color: #f5f7fc;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+.header_menu ul .sub_menu .title{
+  margin-top: 25px;
+}
+.header_menu ul .sub_menu .title::before{
+  content: '';
+  background: url(/한국보건의료정보원/images/gnb_bg.png) no-repeat;
+  background-position: left top;
+  width: 1000%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.header_menu .sub_menu .title strong{
+  width: 110px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 30px;
+  color: #fff;
+  margin-left: 350px;
+}
+.sub_menu .menu_detail{
+  width: 1000px;
+  margin: 25px 0 0 180px;
+}
+.sub_menu .menu_detail a{
+  float: left;
+  margin: 10px 15px;
+}
+.sub_menu .menu_detail li{
+  width: 270px;
+  height: 55px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  line-height: normal;
+  transition: 0.3s;
+}
+.sub_menu .menu_detail a .overtext{
+  height: 70px;
+}
+.sub_menu .menu_detail li:after{
+  content:'\f061';
+  font-family: fontawesome;
+  color: #aaa;
+  transition: 0.5s;
+}
+/* 메뉴 호버했을 때 */
+.header_menu .menu:hover > .sub_menu{
+ opacity: 1;
+ visibility: visible;
+}
+.header_menu li[class="menu"]:hover > a span{
+  color: #145ea0;
+  font-weight: 700;
+}
+/* 서브메뉴 호버했을 때 */
+.sub_menu .menu_detail a li:hover{
+  background: linear-gradient(45deg, #fe3663, #ec3537);
+  color: #fff;
+  border: none;
+}
+.sub_menu .menu_detail a li:hover::after{
+  color: #fff;
+}
+/* 메인 */
+.section1{
+  padding: 54px 0 64px 0;
+}
+.section1 > .content_wrap{
+  width: 1280px;
+  border: 1px solid crimson;
+  height: 100%;
+  margin: 0 auto;
+}
+.section1 > .content_wrap col{
+  float: left;
+}
+.section1 > .content_wrap > .left{
+  width: 730px;
+  /* height: 500px; */
+  /* background-color: aquamarine; */
+  margin-right: 60px;
+}
+.section1 > .content_wrap > .right{
+  width: 490px;
+}
+.section1 > .content_wrap > .left .quick{
+  margin-top: 32px;
+}
+/* 메인 슬라이더 */
+.slider_wrap{
+  position: relative;
+  height: 508px;
+}
+.slider_wrap:before,
+.slider_wrap:after{
+  content: "";
+  height: 440px;
+  background-color: #DCDFE2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+}
+.slider_wrap:before{
+  width: 700px;
+  background-color: #DCDFE2;
+  z-index: -1;
+  top: 10px;
+}
+.slider_wrap:after{
+  width: 660px;
+  background-color: #F2F4F6;
+  z-index: -2;
+  top: 20px;
+}
+.slider_wrap > .prev,
+.slider_wrap > .next{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  font-size: 15px;
+  color: #848B9C;
+}
+.slider_wrap > .prev{
+  left: 10px;
+  padding-left: 50px;
+}
+.slider_wrap > .next{
+  right: 10px;
+  padding-right: 50px;
+}
+.slider_wrap > .prev::before,
+.slider_wrap > .next::after{
+  content: "";
+  position: absolute;
+  top: 3px;
+  width: 37px;
+  height: 9px;
+}
+.slider_wrap > .prev::before{
+  background: url(/한국보건의료정보원/images/prev.png);
+  left: 0;
+}
+.slider_wrap > .next::after{
+  background: url(/한국보건의료정보원/images/next.png);
+  right: 0;
+}
+.main_slider{
+  width: 300%;
+  height: 440px;
+}
+.main_slider > div{
+  width: 33.3333%;
+  height: 440px;
+  float: left;
+  border-radius: 15px;
+  position: relative;
+}
+.main_slider > div:nth-child(1){
+  background: url(/한국보건의료정보원/images/mainslide-1.jpg) no-repeat center center / cover;
+}
+.main_slider > div:nth-child(2){
+  background: url(/한국보건의료정보원/images/mainslide-2.jpg) no-repeat center center / cover;
+}
+.main_slider > div:nth-child(3){
+  background: url(/한국보건의료정보원/images/mainslide-3.jpg) no-repeat center center / cover;
+}
+.main_slider .text{
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  padding: 0 0 50px 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.main_slider .text span{
+  font-family: "Poppins", sans-serif;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.main_slider .text strong{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 38px;
+  letter-spacing: -1px;
+}
+.main_slider .text p{
+  font-size: 17px;
+  max-width: 350px;
+  letter-spacing: -0.4px;
+  font-weight: 300;
+  margin: 0;
+}
+.main_slider .slider_btn{
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 22px;
+  font-size: 18px;
+  background: rgba(20,94,160,.8);
+  color: #fff;
+}
+.main_slider .slider_btn:after{
+  content: "\f054";
+  font-family: fontawesome;
+  margin-left: 12px;
+  font-size: 12px;
 }
