@@ -10,8 +10,18 @@ a{
   text-decoration: none;
   color: #333;
 }
+ul{
+  padding: 0;
+  margin: 0;
+}
 li{
   list-style: none;
+}
+h2{
+  margin: 0;
+}
+p{
+  margin: 0;
 }
 button{
   font-family: "Noto Sans KR", sans-serif;
@@ -27,6 +37,7 @@ button{
   border-bottom: 1px solid #eee;
   position: relative;
   background-color: #fff;
+  z-index:99;
 }
 .header_inner{
   width: 100%;
@@ -189,11 +200,11 @@ button{
 }
 .section1 > .content_wrap{
   width: 1280px;
-  border: 1px solid crimson;
   height: 100%;
   margin: 0 auto;
 }
-.section1 > .content_wrap col{
+.section1 > .content_wrap .left,
+.section1 > .content_wrap .right{
   float: left;
 }
 .section1 > .content_wrap > .left{
@@ -212,6 +223,7 @@ button{
 .slider_wrap{
   position: relative;
   height: 508px;
+  overflow: hidden;
 }
 .slider_wrap:before,
 .slider_wrap:after{
@@ -250,6 +262,7 @@ button{
 .slider_wrap > .next{
   right: 10px;
   padding-right: 50px;
+  cursor: pointer;
 }
 .slider_wrap > .prev::before,
 .slider_wrap > .next::after{
@@ -270,6 +283,9 @@ button{
 .main_slider{
   width: 300%;
   height: 440px;
+  transition: 0.5s;
+  position: absolute;
+  left: 0;
 }
 .main_slider > div{
   width: 33.3333%;
@@ -332,4 +348,230 @@ button{
   font-family: fontawesome;
   margin-left: 12px;
   font-size: 12px;
+}
+/* 슬라이더 버튼*/
+.slider_wrap .tab_inner{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+input{
+  display: none;
+}
+.slider_wrap .tab_inner label{
+  display: inline-block;
+  margin: 0 6px;
+  width: 12px;
+  height: 12px;
+  background-color: #DCDFE2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+input[id=tab1]:checked ~ .slider_wrap .main_slider{
+  left: 0;
+}
+input[id=tab2]:checked ~ .slider_wrap .main_slider{
+  left: -100%;
+}
+input[id=tab3]:checked ~ .slider_wrap .main_slider{
+  left: -200%;
+}
+input[id=tab1]:checked ~ .slider_wrap .tab_inner label[for=tab1],
+input[id=tab2]:checked ~ .slider_wrap .tab_inner label[for=tab2],
+input[id=tab3]:checked ~ .slider_wrap .tab_inner label[for=tab3] {
+  background-color: #EE2F00;
+}
+input[id=next_btn]:checked ~ .slider_wrap .main_slider{
+  transform: translateX(-33.3333%);
+}
+/* 퀵링크 */
+.left .quick{
+  margin-top: 32px;
+}
+.left .quick .link_list{
+  width: 745px;
+  padding: 0;
+}
+.left .quick .link_list li{
+  float: left;
+  width: 109px;
+  margin-right: 15px;
+}
+.left .quick .link_list li a{
+  position: relative;
+  display: block;
+  height: 110px;
+  padding-top: 60px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 0.15rem 0.95rem rgba(219,224,235,.4);
+}
+.left .quick .link_list li span{
+  color: #4C5672;
+  font-size: 16px;
+  transition: 0.5s;
+}
+.link_list li a:before{
+  content: '';
+  background: url(/한국보건의료정보원/images/icons.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+.link_list li a.icon1:before{
+  background-position: 0 0;
+}
+.link_list li a.icon2:before{
+  background-position: -32px 0;
+}
+.link_list li a.icon3:before{
+  background-position: -64px 0;
+}
+.link_list li a.icon4:before{
+  background-position: -96px 0;
+}
+.link_list li a.icon5:before{
+  background-position: -128px 0;
+}
+.link_list li a.icon6:before{
+  background-position: -160px 0;
+}
+.link_list li a:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(136deg, #FF3665 0%, #EB3535 100%);
+  z-index: -1;
+  opacity: 0;
+}
+.link_list li a:hover{
+  box-shadow: 0 0 140px 90px #FF3665;
+}
+.link_list li a:hover:after{
+  opacity: 1;
+}
+.link_list li a:hover .icon_txt{
+  color: #fff;
+}
+.link_list li a.icon1:hover:before{
+  background-position: 0 -32px;
+}
+.link_list li a.icon2:hover:before{
+  background-position: -32px -32px;
+}
+.link_list li a.icon3:hover:before{
+  background-position: -64px -32px;
+}
+.link_list li a.icon4:hover:before{
+  background-position: -96px -32px;
+}
+.link_list li a.icon5:hover:before{
+  background-position: -128px -32px;
+}
+.link_list li a.icon6:hover:before{
+  background-position: -160px -32px;
+}
+/* 뉴스영역 */
+.right{
+  position: relative;
+}
+.right .news h2{
+  padding-bottom: 15px;
+  line-height: 30px;
+  border-bottom: 2px solid #a9a9a9;
+  font-size: 27px;
+  font-weight: bold;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+.right .news h2 span{
+  color: #ED3539;
+}
+.news .news_list li{
+  padding: 20px 0 18px 0;
+  border-bottom: 1px solid #E1E1E1;
+}
+.news .news_list li a{
+  display: block;
+}
+.news .news_list li a > .news_img{
+  float: right;
+  width: 133px;
+  height: 89px;
+  overflow: hidden;
+  margin-left: 13px;
+  border-radius: 10px;
+}
+.news .news_list li a > .news_img img{
+  height: 100%;
+}
+.news .news_list li a .category{
+  float: left;
+  width: 68px;
+  height: 26px;
+  padding: 0 4px;
+  line-height: 26px;
+  margin-right: 8px;
+  font-size: 15px;
+  font-style: normal;
+  text-align: center;
+  color: #fff;
+}
+.news .news_list li:nth-child(1) a .category{
+  background-color: #188091;
+}
+.news .news_list li:nth-child(2) a .category{
+  background-color: #b15935;
+}
+.news .news_list li:nth-child(3) a .category{
+  background-color: #1994D1;
+}
+.news .news_list li:nth-child(4) a .category{
+  background-color: #405FB4;
+}
+.news .news_list li:nth-child(5) a .category{
+  background-color: #834ABB;
+}
+
+.news .news_list li a strong{
+  display: block;
+  margin-bottom: 8px;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
+  color: #151515;
+}
+.news .news_list li a strong > span{
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news .news_list li a p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 26px;
+  font-size: 15px;
+  color: #555;
+  font-weight: 300;
+  letter-spacing: -.0265rem;
+}
+.news .news_list li a > span{
+  display: block;
+  margin-top: 7px;
+  font-size: 14px;
+  color: #999;
 }

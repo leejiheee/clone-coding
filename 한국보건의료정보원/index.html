@@ -229,11 +229,15 @@
   <main class="container">
     <section class="section1">
       <div class="content_wrap">
-        <div class="left col">
+        <div class="left">
           <article class="visual">
+            <input type="radio" name="tabmenu" id="tab1" checked>
+            <input type="radio" name="tabmenu" id="tab2">
+            <input type="radio" name="tabmenu" id="tab3">
+            <input type="radio" id="next_btn" class="next_btn" name="next_btn">
             <div class="slider_wrap">
               <button class="prev" aria-disabled="true">이전</button>
-              <div class="main_slider">
+              <div id="main_slider" class="main_slider">
                 <div>
                   <div class="text">
                     <span>Korea Health Information Service</span>
@@ -259,12 +263,118 @@
                   <a href="#" class="slider_btn" tabindex="-1">사업 소개</a>
                 </div>
               </div>
-              <button class="next" aria-disabled="true">다음</button>
+              <label for="next_btn" class="next">다음</label>
+              <div class="tab_inner">
+                <label for="tab1"></label>
+                <label for="tab2"></label>
+                <label for="tab3"></label>
+              </div>
             </div>
           </article>
-          <article class="quick"></article>
+          <article class="quick">
+            <ul class="link_list">
+              <li>
+                <a href="#" class="icon1">
+                  <span class="icon_txt">주요사업</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="icon2">
+                  <span class="icon_txt">비전</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="icon3">
+                  <span class="icon_txt">홍보영상</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="icon4">
+                  <span class="icon_txt">국민참여</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="icon5">
+                  <span class="icon_txt">직원검색</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="icon6">
+                  <span class="icon_txt">오시는길</span>
+                </a>
+              </li>
+            </ul>
+          </article>
         </div>
-        <div class="right col"></div>
+        <div class="right">
+          <article class="news">
+            <h2>KHIS <span>News</span></h2>
+            <ul class="news_list">
+              <li>
+                <a href="#">
+                  <div class="news_img">
+                    <img src="/한국보건의료정보원/images/newsimg.jpg" alt="의료계-산업계 연결하여 의료데이터 기반 헬스케어 육성한다">
+                  </div>
+                  <em class="category">KHIS소식</em>
+                  <strong><span>의료계-산업계 연결하여 의료데이터 기반 헬스케어 육성한다</span></strong>
+                  <p>보건복지부-서울시, 의료계-산업계 연결하여 의료데이터 기반 헬스케어 육성한다
+                    - 의료데이터 중심병원-스타트업 공동연구 프로젝트 참여기관 모집(3.12~4.3) -
+                   보건복지부(장관 조규홍)는 서울특별시(시장 오세훈)와 함께, 한국보건의료정보원(원장 임근찬)과 서울바이오허브(센터장 김현우)와 협력하여 서울 유망 바이..</p>
+                   <span>2024.03.14</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="category">보도자료</em>
+                  <strong><span>방역통합정보시스템 개통 완료</span></strong>
+                  <p>□ 1월 2일 신종 감염병 발생 시 신속하게 대응하고, 검역 및 감염병 업무를 효율화할 수 있도록 새롭게 구축한 방역통합정보시스템이 정식 개통되었다.     □ 한국보건의료정보원(원장 임근찬)은 2022년 11월부터 ..</p>
+                   <span>2024.01.05</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="category">공지사항</em>
+                  <strong><span>[안내] 2024년 상반기 FHIR 온라인 시범교육 신청안내</span></strong>
+                  <p>안녕하세요 한국보건의료정보원 보건의료표준화부입니다.
+
+                    붙임과 같이 2024년 상반기 FHIR 신규 이러닝과정에 대한 시범교육을 운영하고자 하오니 관심있는 분들의 많은 신청 바랍니다.
+                    
+                    - 신청기간 : 3.12(화)..</p>
+                   <span>2024.03.13</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="category">채용공고</em>
+                  <strong><span>2024년도 제1차 직원 채용공고</span></strong>
+                  <p>                    (재)한국보건의료정보원에서 2024년도 제1차 직원을 아래와 같이 모집합니다. 
+                     
+                    ○ 채용유형 : 정규직, 무기계약직 근로자, 기간제 근로자 
+                     
+                    ○ 채용인원 : 총 37명 
+                      - 정규직 : 3명 행정 6급..</p>
+                   <span>2024.02.29</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="category">입찰안내</em>
+                  <strong><span>K-CURE 암 임상 라이브러리 연구사례 개발용역 공모 사업</span></strong>
+                  <p>○ 사 업 명 : K-CURE 암 임상 라이브러리 연구사례 개발용역
+
+                    ○ 공고기간 : 2024. 2. 22.(목) ~ 2024. 3. 8.(금)(~16:00 까지)
+                    
+                    ○ 공모방법 : 첨부파일(제안요청서) 참조
+                    
+                    ○ 과업내용
+                    
+                    - K-CURE 암 임상..</p>
+                   <span>2024.02.22</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
   </main>
