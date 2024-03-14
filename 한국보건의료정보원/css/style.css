@@ -30,6 +30,9 @@ button{
   cursor: pointer;
   padding: 0;
 }
+section{
+  display: block;
+}
 /* 헤더 */
 .header_wrap{
   width: 100%;
@@ -194,9 +197,10 @@ button{
 .sub_menu .menu_detail a li:hover::after{
   color: #fff;
 }
-/* 메인 */
+/* 메인(section1) */
 .section1{
   padding: 54px 0 64px 0;
+  overflow: hidden;
 }
 .section1 > .content_wrap{
   width: 1280px;
@@ -342,6 +346,10 @@ button{
   font-size: 18px;
   background: rgba(20,94,160,.8);
   color: #fff;
+  transition: 0.5s;
+}
+.main_slider .slider_btn:hover{
+  background: #145EA0;
 }
 .main_slider .slider_btn:after{
   content: "\f054";
@@ -514,6 +522,8 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
 }
 .news .news_list li a > .news_img img{
   height: 100%;
+  overflow: hidden;
+  transition: 0.3s;
 }
 .news .news_list li a .category{
   float: left;
@@ -552,6 +562,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   white-space: nowrap;
   font-size: 18px;
   color: #151515;
+  position: relative;
 }
 .news .news_list li a strong > span{
   position: relative;
@@ -574,4 +585,57 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   margin-top: 7px;
   font-size: 14px;
   color: #999;
+}
+.news .news_list li a:hover .news_img img{
+    transform: scale(1.1);
+}
+.news .news_list li a strong > span:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #000;
+  transition: 0.3s;
+}
+.news .news_list li a:hover > strong span:after{
+  width: 100%
+}
+/* 메인(section2) */
+.section2{
+  position: relative;
+  padding-top: 60px;
+  z-index: 5;
+}
+.section2:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 430px;
+  border-radius: 50px 50px 0 0;
+  background: linear-gradient(108deg, #EFF4F9 0%, #FFFCF6 100%) 0 0 no-repeat;
+}
+.section2_wrap{
+  width: 1280px;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+.section2_wrap .title_wrap{
+  text-align: center;
+  margin-bottom: 34px;
+}
+.section2 .title{
+  margin-bottom: 9px;
+  font-size: 32px;
+  color: #000;
+  line-height: 37.6px;
+  letter-spacing: -1.28px;
+}
+.section2 .title span{
+  color: #F23545;
 }
