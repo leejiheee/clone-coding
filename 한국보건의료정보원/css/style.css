@@ -694,7 +694,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
 }
 .business .arrow{
   position: absolute;
-  top: 18%;
+  top: 30%;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -853,7 +853,9 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
 /******************** 메인(section3) ********************/
 .section3{
   padding-bottom: 85px;
+  height: 425px;
 }
+/* left */
 .latest{
   float: left;
   position: relative;
@@ -868,12 +870,11 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   top: 53px;
   width: 100%;
   height: 0;
-  border: 1px solid #333;
-  z-index: 1;
+  border-top: 1px solid #333;
+  z-index: 2;
 }
 .latest li{
   float: left;
-  margin-left: -1px;
 }
 .latest > li > a{
   position: relative;
@@ -886,7 +887,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   border-color: #ddd;
   background: #FAFAFA;
   font-size: 16px;
-  border-radius: 8px 8px 0 0;
+  border-radius: 10px 10px 0 0;
   letter-spacing: -0.384px;
   color: #555;
   word-break: keep-all;
@@ -895,7 +896,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   font-weight: bold;
   color: #333;
   border-color: #333;
-  z-index: 2;
+  z-index: 3;
   background: #fff;
   border-bottom: none;
 }
@@ -903,6 +904,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   display: table-cell;
   vertical-align: middle;
   word-break: keep-all;
+  cursor: pointer;
 }
 .latest > li > .latest_item{
   display: none;
@@ -912,7 +914,16 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   width: 100%;
   padding-top: 36px;
 }
-.latest > li input[name="latest"]:checked ~ .latest_item{
+.latest > li > .latest_item:nth-child(1){
+  display: block;
+}
+.latest > li input[id="latest1"]:checked ~ .latest_item{
+  display: block;
+}
+.latest > li input[id="latest2"]:checked ~ .latest_item{
+  display: block;
+}
+.latest > li input[id="latest3"]:checked ~ .latest_item{
   display: block;
 }
 .latest > li > .latest_item .first{
@@ -987,7 +998,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   text-overflow: ellipsis;
 }
 .latest li .latest_item .list{
-  min-height: 10.05rem;
+  min-height: 9rem;
   padding: 24px;
   border: 1px solid #e1e1e1;
   border-radius: 8px;
@@ -998,6 +1009,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
 .latest li .latest_item .list > li{
   position: relative;
   padding: 0 70px 0 12px;
+  margin-top: 6.6px;
   font-weight: 300;
 }
 .latest li .latest_item .list > li::before{
@@ -1012,6 +1024,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
 }
 .latest li .latest_item .list > li > a{
   display: block;
+  width: 503.6px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1019,6 +1032,7 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
 .latest li .latest_item .list > li > a > strong{
   font-weight: 400;
   position: relative;
+  border-bottom: 1px solid;
 }
 .latest li .latest_item .list > li > a > span{
   position: absolute;
@@ -1026,5 +1040,176 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   top: 0;
   font-size: 15px;
   color: #999;
-
+  letter-spacing: -.0225rem;
 }
+.latest li .latest_item .more{
+  position: absolute;
+  right: 0;
+  top: -40px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.latest li .latest_item .more > a{
+  display: block;
+  height: 100%;
+  transition: 0.3s;
+  font-size: 24px;
+  line-height: 24px;
+}
+.latest li .latest_item .more > a::before{
+  content: "\e9c5";
+  font-family: xeicon;
+}
+.latest_item .first > a > .desc > .title > strong:after,
+.latest_item .list > li > a > strong:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0px;
+  height: 1px;
+  background-color: #333;
+  transition: 0.2s;
+}
+.latest_item .first:hover > a > .desc > .title > strong:after{
+  width: 100%;
+}
+.latest_item .list > li:hover > a > strong:after{
+  width: 100%;
+}
+/* right */
+.section3_col{
+  float: left;
+  width: 584.4px;
+}
+.popupzone{
+  position: relative;
+  margin-bottom: 20px;
+}
+.popupzone .popup_slider_wrap{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 230px;
+}
+.popupzone .popup_slider_wrap .popup_slider{
+  position: absolute;
+  left: 0;
+  width: 700%;
+  transition: 0.5s;
+}
+.popupzone .popup_slider_wrap .popup_slider .popup_item{
+  width: 584px;
+  display: block;
+  float: left;
+}
+.popup_slider_wrap .popup_slider .popup_item a{
+  display: block;
+  height: 230px;
+  background-repeat: no-repeat !important;
+  background-position: left top !important;
+  background-size: cover !important;
+  border-radius: 10px;
+}
+.popupzone .popup_dots{
+  display: block;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+}
+.popupzone .popup_dots > label{
+  float: left;
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  border-radius: 50%;
+  padding-top: 12px;
+  overflow: hidden;
+  vertical-align: top;
+  background: #133658;
+  box-sizing: border-box;
+  opacity: 0.12;
+  cursor: pointer;
+}
+.popupzone input[id="popup1"]:checked ~ .popup_slider_wrap .popup_slider{
+  left: 0;
+}
+.popupzone input[id="popup2"]:checked ~ .popup_slider_wrap .popup_slider{
+  left: -100%;
+}
+.popupzone input[id="popup3"]:checked ~ .popup_slider_wrap .popup_slider{
+  left: -200%;
+}
+.popupzone input[id="popup4"]:checked ~ .popup_slider_wrap .popup_slider{
+  left: -300%;
+}
+.popupzone input[id="popup5"]:checked ~ .popup_slider_wrap .popup_slider{
+  left: -400%;
+}
+.popupzone input[id="popup6"]:checked ~ .popup_slider_wrap .popup_slider{
+  left: -500%;
+}
+.popupzone input[id="popup7"]:checked ~ .popup_slider_wrap .popup_slider{
+  left: -600%;
+}
+.popupzone input[id="popup1"]:checked ~ .popup_dots > label[for="popup1"],
+.popupzone input[id="popup2"]:checked ~ .popup_dots > label[for="popup2"],
+.popupzone input[id="popup3"]:checked ~ .popup_dots > label[for="popup3"],
+.popupzone input[id="popup4"]:checked ~ .popup_dots > label[for="popup4"],
+.popupzone input[id="popup5"]:checked ~ .popup_dots > label[for="popup5"],
+.popupzone input[id="popup6"]:checked ~ .popup_dots > label[for="popup6"],
+.popupzone input[id="popup7"]:checked ~ .popup_dots > label[for="popup7"]{
+  background: #EE2F00;
+  opacity: 1;
+}
+.edu_link > .list{
+  width: 601.4px;
+}
+.edu_link > .list > li{
+  float: left;
+  width: 183.25px;
+  margin-right: 17px;
+}
+.edu_link > .list > li > a{
+  display: block;
+  position: relative;
+  top: 0;
+  height: 151px;
+  padding: 24px 0 0 24px;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: -.05rem;
+  font-weight: 400;
+  background-repeat: no-repeat;
+  background-position: right .9rem bottom 1rem;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.edu_link > .list .list1 > a{
+  background-image: url(/한국보건의료정보원/images/icon_edu1.png);
+  background-color: #188091;
+}
+.edu_link > .list .list2 > a{
+  background-image: url(/한국보건의료정보원/images/icon_edu2.png);
+  background-color: #1994D1;
+}
+.edu_link > .list .list3 > a{
+  background-image: url(/한국보건의료정보원/images/icon_edu3.png);
+  background-color: #405FB4;
+}
+.edu_link > .list .list1 > a:hover{
+  box-shadow:0 .25rem 1rem rgba(28,174,184,.5);
+  top: -10px;
+}
+.edu_link > .list .list2 > a:hover{
+  box-shadow:0 .25rem 1rem rgba(25,148,209,.5);
+  top: -10px;
+}
+.edu_link > .list .list3 > a:hover{
+  box-shadow:0 .25rem 1rem rgba(64,95,180,.5);
+  top: -10px;
+}
+/******************** (section3) ********************/

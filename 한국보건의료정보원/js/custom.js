@@ -55,28 +55,25 @@ window.addEventListener('focus', function() {
   autoNextRadioButton();
 });
 playBtn.addEventListener('click', function() {
-  startAutoSlide(); // 자동 슬라이드 시작 함수 호출
-  playBtn.style.display = 'none'; // play 버튼 숨김
-  stopBtn.style.display = 'inline-block'; // stop 버튼 표시
+  startAutoSlide();
+  playBtn.style.display = 'none';
+  stopBtn.style.display = 'inline-block';
 });
 
-// stop 버튼 클릭 시 자동 슬라이드 중지
 stopBtn.addEventListener('click', function() {
-  stopAutoSlide(); // 자동 슬라이드 중지 함수 호출
-  playBtn.style.display = 'inline-block'; // play 버튼 표시
-  stopBtn.style.display = 'none'; // stop 버튼 숨김
+  stopAutoSlide();
+  playBtn.style.display = 'inline-block';
+  stopBtn.style.display = 'none';
 });
 
-// 5초마다 자동 슬라이드 함수
 function startAutoSlide() {
   intervalId = setInterval(() => {
-    nextRadioButton(); // 다음 라디오 버튼 선택 함수 호출
+    nextRadioButton();
   }, 5000);
 }
 
-// 자동 슬라이드 중지 함수
 function stopAutoSlide() {
-  clearInterval(intervalId); // 인터벌 해제
+  clearInterval(intervalId);
 }
 // slide2
 var slides = document.querySelector('.business_items'),
