@@ -123,7 +123,6 @@ prevBtn2.addEventListener('click', function(){
 function moveSlide(num){
   slides.style.left = -num * (slideWidth + slideMargin) + 'px';
   currentIdx = num;
-  console.log(currentIdx, slideCount);
   if(currentIdx == slideCount || currentIdx == -slideCount){
     setTimeout(function(){
       slides.classList.remove('animated');
@@ -135,3 +134,60 @@ function moveSlide(num){
     }, 600);
   }
 }
+//slide3
+var slides2 = document.querySelector('.banner_slider'),
+    slide2 = document.querySelectorAll('.banner_item'),
+    currentIdx2 = 0,
+    slideCount2 = slide2.length,
+    prevButton = document.querySelector('.banner_prev'),
+    slideWidth2 = 142,
+    slideMargin2 = 54,
+    nextButton = document.querySelector('.banner_next'),
+    stopButton = document.querySelector('#stop'),
+    startButton = document.querySelector('#start');
+
+    slides2.style.width = (slideWidth2 + slideMargin2) * slideCount2 - slideMargin2 + 'px';
+
+     function moveSlide2(num){
+      slides2.style.left = -num * (slideWidth2 + slideMargin2) + 'px';
+      currentIdx2 = num;
+     }
+     nextButton.addEventListener('click', function(){
+      if(currentIdx2 < slideCount2 - 7){
+        moveSlide2(currentIdx2 + 1);
+      }
+     })
+     prevButton.addEventListener('click', function(){
+      if(currentIdx2 > 0){
+        moveSlide2(currentIdx2 - 1);
+      }
+     })
+
+     //자동슬라이드
+     var timer = undefined;
+
+     function autoSlide2(){
+      if(timer == undefined){
+        timer = setInterval(function(){
+          if(currentIdx2 < 3){
+            moveSlide2(currentIdx2 + 1);
+          }
+        }, 5000)
+      }
+     }
+     autoSlide2();
+    function stopSlide2(){
+      clearInterval(timer);
+      timer = undefined;
+    }
+    console.log(stopButton);
+    stopButton.addEventListener('click', function(){
+      stopSlide2();
+      startButton.style.display = 'block';
+      stopButton.style.display = 'none';
+    });
+    startButton.addEventListener('click', function(){
+      autoSlide2();
+      startButton.style.display = 'none';
+      stopButton.style.display = 'block';
+    });

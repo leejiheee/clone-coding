@@ -23,11 +23,11 @@ h2{
 p{
   margin: 0;
 }
-i{
+i, em, address{
   font-style: normal;
 }
-em{
-  font-style: normal;
+img{
+  max-width: 100%;
 }
 button{
   font-family: "Noto Sans KR", sans-serif;
@@ -1212,4 +1212,227 @@ input[id=next_btn]:checked ~ .slider_wrap .main_slider{
   box-shadow:0 .25rem 1rem rgba(64,95,180,.5);
   top: -10px;
 }
-/******************** (section3) ********************/
+/******************** 메인(banner_effect) ********************/
+.banner_effect{
+  position: relative;
+  padding: 22px 0;
+  z-index: 0;
+  border-top: 1px solid #E5E5E5;
+}
+.banner_effect .container{
+  padding-left: 160px;
+  box-sizing: border-box;
+}
+.banner_effect .container .banner_slider_wrap{
+  width: 1174px;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  height: 45px;
+  overflow: hidden;
+}
+.banner_effect .container .banner_slider_wrap .banner_slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+}
+.banner_effect .container .banner_slider_wrap .banner_slider .banner_item{
+  width: 142px;
+  margin-right: 54px;
+  display: block;
+  float: left;
+  height: 100%;
+}
+.banner_slider_wrap .banner_slider .banner_item > a > img{
+  margin: 0 auto;
+}
+.banner_effect .container .banner_control{
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 120px;
+  height: 36px;
+  text-align: center;
+}
+.banner_effect .container .banner_control > div{
+  height: 34px;
+  width: 34px;
+  border: 1px solid #eee;
+  line-height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  color: #999;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+}
+.banner_effect .container .banner_control > div > i{
+  display: inline-block;
+  font-family: xeicon;
+  font-size: 20px;
+  line-height: 1.7;
+}
+.banner_effect .container .banner_control .banner_prev{
+  float: left;
+}
+.banner_effect .container .banner_control .banner_next{
+  float: right;
+}
+.banner_effect .container .banner_control .banner_play{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner_effect .container .banner_control .banner_play.start{
+  display: none;
+}
+/******************** 푸터 ********************/
+footer .footer_top{
+  padding: 10px;
+  background: #F1F4F7;
+}
+.footer_top .container::after,
+.footer_bottom .container::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.footer_top .low{
+  float: left;
+  color: #333;
+  margin-top: 8px;
+  overflow: hidden;
+}
+.footer_top .low > li{
+  position: relative;
+  float: left;
+  margin-right: 12px;
+  padding-right: 12px;
+  font-size: 15px;
+}
+.footer_top .low > li:first-child::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 1px;
+  height: 12px;
+  border-left: 1px solid #ddd;
+}
+.footer_top .low > li:first-child > a{
+  color: #145EA0;
+  font-weight: bold;
+}
+.footer_top .low > li:last-child{
+  margin-right: 0;
+  padding-right: 0;
+}
+.footer_top .related{
+  float: right;
+  position: relative;
+  font-size: 14px;
+  width: 212px;
+  height: 40px;
+  background: #fff;
+  color: #555;
+}
+.footer_top .related > label{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding-left: 19px;
+  text-align: left;
+  border-radius: 4px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.footer_top .related > label::after{
+  content: "\e930";
+  display: inline-block;
+  font-family: xeicon;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: auto;
+  right: 34px;
+  transition: 0.3s;
+}
+.footer_top .related .scroll{
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  background-color: #000;
+  border-radius: 4px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.footer_top .related .scroll .s_container > a{
+  display: block;
+  color: #fff;
+}
+.footer_top .container input[id="scroll"]:checked ~ .related .scroll{
+  visibility: visible;
+  overflow: visible;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  width: 100%;
+  padding: 1rem;
+}
+.footer_top .container input[id="scroll"]:checked ~ .related > label::after{
+  transform: translateY(-50%) rotate(180deg);
+}
+.footer_bottom .container{
+  padding: 23px 0 32px 0;
+}
+.footer_bottom .util{
+  float: left;
+  padding-top: 18px;
+  width: 850px;
+  line-height: 1.8rem;
+  color: #666;
+  word-break: keep-all;
+}
+.footer_bottom .logo{
+  float: left;
+  width: 120px;
+}
+.footer_bottom .help_call{
+  float: right;
+}
+.footer_bottom .help_call > img{
+  margin-right: 20px;
+}
+.footer_bottom .help_call > *{
+  float: left;
+}
+.footer_bottom .help_call .help_detail > em{
+  color: #555;
+  font-size: 15px;
+}
+.footer_bottom .help_call .help_detail > em > span{
+  color: #01B4C4;
+  font-weight: bold;
+}
+.footer_bottom .help_call .help_detail > p{
+  font-size: 13px;
+  margin-top: 5px;
+  height: 26px;
+  line-height: 26px;
+  background: #9CA6AF;
+  color: #fff;
+  text-align: center;
+  border-radius: 16px;
+}
+.footer_bottom .help_call .help_detail > strong{
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+}
